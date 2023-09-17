@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squeaky Toys Sounds</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: #283149;
+      }
+      h1 {
+        font-size: 5rem;
+        color: #dbedf3;
+        font-family: "Arvo", cursive;
+        text-shadow: 3px 0 #614004;
+      }
+      footer {
+        color: #dbedf3;
+        font-family: sans-serif;
+      }
+      .a {
+        background-image: url("ToyImages/1.jpg");
+      }
+      .s {
+        background-image: url("ToyImages/2.jpg");
+      }
+      .d {
+        background-image: url("ToyImages/3.jpg");
+      }
+      .f {
+        background-image: url("ToyImages/4.jpg");
+      }
+      .h {
+        background-image: url("ToyImages/5.jpg");
+      }
+      .j {
+        background-image: url("ToyImages/6.jpg");
+      }
+      .k {
+        background-image: url("ToyImages/7.jpg");
+      }
+      .l {
+        background-image: url("ToyImages/8.jpg");
+      }
+
+      .toys {
+        background-repeat: no-repeat; /*  */
+        background-size: cover; /*  */
+        object-fit: cover; /*  */
+        background-color: white;
+        outline: none;
+        border: 20px solid #658d61;
+        border-radius: 25px;
+        font-size: 5rem;
+        font-family: "Roboto", cursive;
+        font-weight: 900;
+        line-height: 5;
+        color: #614105;
+        text-shadow: 3px 0 #edf107;
+        display: inline-block;
+        width: 500px;
+        height: 500px;
+        margin: 15px;
+        text-align: center;
+      }
+
+      .pressed {
+        box-shadow: 0 3px 4px 0 #dbedf3;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Squeaky Toys Sounds</h1>
+    <div class="set">
+      <button class="a toys">a</button>
+      <button class="s toys">s</button>
+      <button class="d toys">d</button>
+      <button class="f toys">f</button>
+      <button class="h toys">h</button>
+      <button class="j toys">j</button>
+      <button class="k toys">k</button>
+      <button class="l toys">l</button>
+    </div>
+
+    <script>
+      var numberOfToysButtons = document.querySelectorAll(".toys").length;
+
+      for (var i = 0; i < numberOfToysButtons; i++) {
+        document
+          .querySelectorAll(".toys")
+          [i].addEventListener("click", function () {
+            var buttons = this.innerText;
+
+            // passing the key
+            playSound(buttons);
+            buttonAnimation(buttons); // Add button animation
+          });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        console.log(e);
+        //call the playsound and use the event
+        playSound(e.key);
+        buttonAnimation(e.key); // Add button animation
+      });
+
+      function playSound(key) {
+        switch (key) {
+          case "a":
+            var squeaky1 = new Audio("ToySounds/squeaky1.mp3");
+            squeaky1.play();
+            break;
+          case "s":
+            var squeaky2 = new Audio("ToySounds/squeaky2.mp3");
+            squeaky2.play();
+            break;
+          case "d":
+            var squeaky3 = new Audio("ToySounds/squeaky3.mp3");
+            squeaky3.play();
+            break;
+          case "f":
+            var squeaky4 = new Audio("ToySounds/squeaky4.mp3");
+            squeaky4.play();
+            break;
+
+          case "h":
+            var squeaky5 = new Audio("ToySounds/squeaky-duck.mp3");
+            squeaky5.play();
+            break;
+          case "j":
+            var squeaky6 = new Audio("ToySounds/squeaky-pig.mp3");
+            squeaky6.play();
+            break;
+          case "k":
+            var squeaky7 = new Audio("ToySounds/squeaky5.mp3");
+            squeaky7.play();
+            break;
+          case "l":
+            var squeaky8 = new Audio("ToySounds/squeaky6.mp3");
+            squeaky8.play();
+            break;
+          default:
+            console.log(key);
+            console.log(buttons);
+            break;
+        }
+      }
+      function buttonAnimation(currentKey) {
+        var activeButton = document.querySelector("." + currentKey);
+        activeButton.classList.add("pressed");
+        console.log(activeButton);
+
+        setTimeout(function () {
+          activeButton.classList.remove("pressed");
+        }, 100);
+      }
+    </script>
+  </body>
+</html>

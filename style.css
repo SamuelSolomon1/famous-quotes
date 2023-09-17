@@ -1,0 +1,53 @@
+body {
+  text-align: center;
+  /* background-color: #000000; */
+  background-image: url(https://pbs.twimg.com/amplify_video_thumb/1636341778226765827/img/5wQ2HhJKVxFHSlf4.jpg:large);
+}
+h1 {
+  font-size: 5rem;
+  color: #dbedf3;
+  text-shadow: 3px 0 #614004;
+}
+.box {
+  border: 2px solid red;
+}
+.quoteImages {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+/* .quotes {
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    object-fit: cover; 
+    background-color: white;
+    outline: none;
+    border: 20px solid #658d61;
+    border-radius: 25px;
+    font-size: 5rem;
+    font-family: "Roboto", cursive;
+    font-weight: 900;
+    line-height: 5;
+    color: #614105;
+    text-shadow: 3px 0 #edf107;
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    margin: 15px;
+    text-align: center;
+  } */
+.quotes {
+  font-size: 5rem;
+  padding: 30px;
+  margin: 3px;
+  background-color: rgb(100, 169, 199);
+  color: #dbedf3;
+  border-radius: 10px;
+}
+.pressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
